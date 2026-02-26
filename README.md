@@ -28,18 +28,21 @@ cd url-to-others
 npm install
 ```
 
-### 3. 配置 Cookie
+### 3. 项目配置
 
-由于语雀的大部分知识库（尤其是私有库）需要登录才能访问，你需要提供 Cookie。
+**重要：** 本项目依赖 `src/config.js` 进行运行，该文件包含敏感信息（如 Cookie），因此未包含在 Git 仓库中。
 
-1.  复制配置模板：
+1.  **生成配置文件**：
+    将提供的配置模板 `src/config.example.js` 复制一份并重命名为 `src/config.js`：
     ```bash
     cp src/config.example.js src/config.js
     ```
-2.  打开 `src/config.js`，填入你的配置：
+
+2.  **编辑配置**：
+    打开 `src/config.js`，填入你的配置：
     *   `targetUrl`: 目标知识库的首页 URL（例如 `https://www.yuque.com/your-space/your-book`）。
-    *   `cookie`: 你的语雀 Cookie。
-        *   **如何获取**：在浏览器登录语雀，按 `F12` 打开开发者工具 -> `Application` -> `Cookies` -> 找到 `www.yuque.com` -> 复制 Cookie 字符串（通常包含 `_yuque_session` 等字段）。
+    *   `cookie`: 你的语雀 Cookie (必须提供，否则无法访问)。
+        *   **如何获取**：在浏览器登录语雀，按 `F12` 打开开发者工具 -> `Network` -> 刷新页面 -> 点击任意请求 -> 在 `Request Headers` 中找到 `Cookie` 并复制。
 
 ```javascript
 // src/config.js
