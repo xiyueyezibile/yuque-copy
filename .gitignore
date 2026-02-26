@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# System
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+npm-debug.log*
+
+# Output
+download/
+output/
+yuque_page.html
+yuque_page.png
+
+# Configuration (Sensitive data)
+src/config.js
